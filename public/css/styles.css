@@ -25,6 +25,10 @@ header a, header a:hover {
     float: right;
 }
 
+body {
+    background-color: #efefef
+}
+
 
 
 .mypage-container {
@@ -34,14 +38,22 @@ header a, header a:hover {
 
 .user-menu {
     width: 30%;
-    background-color: pink;
     text-align: center;
     padding: 30px 10px;
+}
+
+.user-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: grey;
+    margin: 10px auto;
 }
 
 
 .post-container {
     width: 70%;
-    background-color: gold;
     height: 100px;
 }
+
+
