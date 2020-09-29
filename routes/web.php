@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth'], function() {
 
-Route::get('/', function () {
-    return view('posts/index');
-});
+    Route::get('/post', 'App\Http\Controllers\PostController@showCreateForm')->name('posts.create');
+    Route::post('/post', 'App\Http\Controllers\PostController@create');
+
+    Route::get('/', 'App\Http\Controllers\PostController@index')->name('/');
+    Route::get('/english', 'App\Http\Controllers\PostController@English');
 
 });
 

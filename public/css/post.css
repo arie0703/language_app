@@ -1,0 +1,22 @@
+.post-wrapper {
+    width: 60%;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.post-info {
+    display: inline;
+    margin-right: 10px;
+}
+
+.post-info span {
+    color: red;
+}
+
+.post-form .form-control {
+    margin: 20px 0;
+    width: 400px;
+    resize: none;
+}

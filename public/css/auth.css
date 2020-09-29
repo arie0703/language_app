@@ -5,7 +5,7 @@
 }
 
 
-input[type="password"], input[type="email"] {
+input[type="password"], input[type="email"], input[type="text"] {
     width: 200px;
     margin: 20px auto;
 }
