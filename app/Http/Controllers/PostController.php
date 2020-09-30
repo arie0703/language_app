@@ -48,14 +48,103 @@ class PostController extends Controller
        ]);        
    }
 
+    public function edit(Request $request)
+    {
+        $post = Post::find($request->id);
+        return view('posts/edit', ['post' => $post]); 
+    }
+
+    public function update(Request $request)
+    {
+        $post = Post::find($request->id);
+        $form = $request->all();
+        unset($form['_token']);
+        $post->fill($form)->save();
+        return redirect('/');
+    }
+
+
+   //Language Timeline
    public function English(Post $post)
    {
         $posts = Post::where('language', 'English')
         ->orderBy('created_at', 'desc')->get();
-        return view('posts/English', [
+        return view('posts/language/english', [
             'posts' => $posts,
         ]);    
 
+   }
+
+   public function French(Post $post)
+   {
+        $posts = Post::where('language', 'French')
+        ->orderBy('created_at', 'desc')->get();
+        return view('posts/language/french', [
+            'posts' => $posts,
+        ]);
+   }
+
+   public function German(Post $post)
+   {
+        $posts = Post::where('language', 'German')
+        ->orderBy('created_at', 'desc')->get();
+        return view('posts/language/german', [
+            'posts' => $posts,
+        ]);
+   }
+
+   public function Spanish(Post $post)
+   {
+        $posts = Post::where('language', 'Spanish')
+        ->orderBy('created_at', 'desc')->get();
+        return view('posts/language/spanish', [
+            'posts' => $posts,
+        ]);
+   }
+
+   public function Portuguese(Post $post)
+   {
+        $posts = Post::where('language', 'Portuguese')
+        ->orderBy('created_at', 'desc')->get();
+        return view('posts/language/portuguese', [
+            'posts' => $posts,
+        ]);
+   }
+
+   public function Russian(Post $post)
+   {
+        $posts = Post::where('language', 'Russian')
+        ->orderBy('created_at', 'desc')->get();
+        return view('posts/language/russian', [
+            'posts' => $posts,
+        ]);
+   }
+
+   public function Japanese(Post $post)
+   {
+        $posts = Post::where('language', 'Japanese')
+        ->orderBy('created_at', 'desc')->get();
+        return view('posts/language/japanese', [
+            'posts' => $posts,
+        ]);
+   }
+
+   public function Chinese(Post $post)
+   {
+        $posts = Post::where('language', 'Chinese')
+        ->orderBy('created_at', 'desc')->get();
+        return view('posts/language/chinese', [
+            'posts' => $posts,
+        ]);
+   }
+
+   public function Korean(Post $post)
+   {
+        $posts = Post::where('language', 'Korean')
+        ->orderBy('created_at', 'desc')->get();
+        return view('posts/language/korean', [
+            'posts' => $posts,
+        ]);
    }
    
 }

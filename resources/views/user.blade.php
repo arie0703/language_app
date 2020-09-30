@@ -14,21 +14,21 @@
 
       <div class="menu">
         <a href="/post">New Post</a><br>
-        <a href="/">View Posts</a><br>
+        <a href="/">My Posts</a><br>
         <a href="/">Keep</a><br>
       </div>
       <br>
       <div class="timeline">
         <p>- Language Timeline -</p>
         <a href="/english">English</a><br>
-        <a href="/">French</a><br>
-        <a href="/">German</a><br>
-        <a href="/">Spanish</a><br>
-        <a href="/">Portuguese</a><br>
-        <a href="/">Russian</a><br>
-        <a href="/">Japanese</a><br>
-        <a href="/">Chinese</a><br>
-        <a href="/">Korean</a><br>
+        <a href="/french">French</a><br>
+        <a href="/german">German</a><br>
+        <a href="/spanish">Spanish</a><br>
+        <a href="/portuguese">Portuguese</a><br>
+        <a href="/russian">Russian</a><br>
+        <a href="/japanese">Japanese</a><br>
+        <a href="/chinese">Chinese</a><br>
+        <a href="/korean">Korean</a><br>
       </div>
       
     </div>

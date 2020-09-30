@@ -11,7 +11,6 @@
     <p>{{ $post->body }}</p><br>
     <p class="post-info">{{ $post->created_at }}</p>
     <p class="post-info">Written in <span>{{ $post->language }}</span></p>
-    <a href="{{ route('posts.edit') }}?id={{ $post->id }}">Edit</a>
   </div>
   @endforeach
 @endsection
