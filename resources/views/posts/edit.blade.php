@@ -5,20 +5,22 @@
 @endsection
 
 @section('posts')
-<form method="post" action="{{ route('posts.create') }}" enctype="multipart/form-data">
- @csrf
+<form method="post" action="{{ route('posts.update') }}" enctype="multipart/form-data">
     <div class="post-form">
+        {{ csrf_field() }}
+        <input type='hidden' name='id' value='{{ $post->id }}'><br>
+
         <div class="form-title">
-            <input class="form-control" type="text" placeholder="Title" name="title" value="{{ old('title') }}">
+            <input class="form-control" type="text" placeholder="Title" name="title" value="{{ $post->title }}">
         </div>
 
         <div class="form-body">
-            <textarea class="form-control" type="text" name="body" cols="50" rows="10">{{ old('body') }}</textarea>        
+            <textarea class="form-control" type="text" name="body" cols="50" rows="10">{{ $post->body }}</textarea>        
         </div>
 
         <div class="form-language">
         <select name="language" class="form-control">
-          <option selected="selected" value="{{ old('language') }}">Language</option>
+          <option selected="selected" value="{{ $post->language }}">Language</option>
           <option value="English">English</option>
           <option value="German">German</option>
           <option value="French">French</option>
