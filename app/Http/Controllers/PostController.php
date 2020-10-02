@@ -63,6 +63,19 @@ class PostController extends Controller
         return redirect('/');
     }
 
+    public function delete(Request $request)
+    {
+        $post = Post::find($request->id);
+        return view('posts/delete', ['post' => $post]); 
+    }
+
+    public function remove (Request $request)
+    {
+        $post = Post::find($request->id);
+        $post->delete();
+        return redirect('/');
+    }
+
 
    //Language Timeline
    public function English(Post $post)
@@ -72,7 +85,6 @@ class PostController extends Controller
         return view('posts/language/english', [
             'posts' => $posts,
         ]);    
-
    }
 
    public function French(Post $post)

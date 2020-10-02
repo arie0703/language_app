@@ -21,6 +21,14 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/post/edit', 'App\Http\Controllers\PostController@edit')->name('posts.edit');
     Route::post('/post/edit', 'App\Http\Controllers\PostController@update')->name('posts.update');
 
+    Route::get('/post/delete', 'App\Http\Controllers\PostController@delete')->name('posts.delete');
+    Route::post('/post/remove', 'App\Http\Controllers\PostController@remove')->name('posts.remove');
+
+    Route::get('/user/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
+    Route::post('/user/edit', 'App\Http\Controllers\UserController@update')->name('user.update');
+
+    Route::resource('user', 'App\Http\Controllers\UserController');
+
 
     Route::get('/', 'App\Http\Controllers\PostController@index')->name('/');
 

@@ -15,16 +15,16 @@
   </div>
   <div class="header-menu">
     @if(Auth::check())
-      <span class="menu-item">ようこそ, {{ Auth::user()->name }}さん</span>
+      <span class="menu-item">Hi, {{ Auth::user()->name }} !</span>
       ｜
-      <a href="#" id="logout" class="menu-item">ログアウト</a>
+      <a href="#" id="logout" class="menu-item">Sign out</a>
       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
       </form>
     @else
-      <a class="menu-item" href="{{ route('login') }}">ログイン</a>
+      <a class="menu-item" href="{{ route('login') }}">Sign in</a>
       ｜
-      <a class="menu-item" href="{{ route('register') }}">会員登録</a>
+      <a class="menu-item" href="{{ route('register') }}">Register</a>
     @endif
   </div>
 </header>

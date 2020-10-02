@@ -50,10 +50,18 @@ body {
     margin: 10px auto;
 }
 
+.user-img img {
+    border-radius: 50%;
+}
+
 
 .post-container {
     width: 70%;
     height: 100px;
+}
+
+.btn {
+    display: block;
 }
 
 

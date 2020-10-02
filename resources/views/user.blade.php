@@ -10,9 +10,15 @@
       </div>
 
       <div class="user-img">
+      @if (!empty(Auth::user()->image))
+      <img src="storage/storage/{{ Auth::user()->image}}" id="img">
+      @else
+      <img src="storage/noicon.jpg" id="img">
+      @endif
       </div>
 
       <div class="menu">
+        <a href="/user/edit">Edit Profile</a><br><br>
         <a href="/post">New Post</a><br>
         <a href="/">My Posts</a><br>
         <a href="/">Keep</a><br>
