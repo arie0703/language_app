@@ -8,6 +8,7 @@
 <form method="post" action="{{ route('posts.update') }}" enctype="multipart/form-data">
     <div class="post-form">
         {{ csrf_field() }}
+        @method('PATCH')
         <input type='hidden' name='id' value='{{ $post->id }}'><br>
 
         <div class="form-title">
@@ -32,6 +33,12 @@
           <option value="Corean">Corean</option>
         </select>
         </div>
+
+        <p>Image</p>
+        <label for="image" class="btn">
+            <input id="image" type="file"  name="image">
+        </label>
+        <br>
 
         <div class="form-submit">
             <button type="submit">Post</button>

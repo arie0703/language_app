@@ -31,9 +31,27 @@
         </select>
         </div>
 
+        <p>Image</p>
+        <label for="image" class="btn">
+            <input id="image" type="file"  name="image">
+        </label>
+        <br>
+
         <div class="form-submit">
             <button type="submit">Post</button>
         </div>
     </div>
+
+
+    <script>
+    function previewImage(obj)
+    {
+        var fileReader = new FileReader();
+        fileReader.onload = (function() {
+        document.getElementById('img').src = fileReader.result;
+        });
+        fileReader.readAsDataURL(obj.files[0]);
+    }
+    </script>
 </form>
 @endsection

@@ -29,15 +29,14 @@ class UserController extends Controller
         return view('/user/edit', ['user' => $user]);
     }
 
-    public function update($id, Request $request) {
+    public function update($image_id, Request $request) {
         $user = Auth::user();
         $form = $request->all();
 
         $profileImage = $request->file('image');
 
-        $form = $request->all();
         if ($profileImage != null) {
-            $form['image'] = $this->saveProfileImage($profileImage, $id); // return file name
+            $form['image'] = $this->saveProfileImage($profileImage, $image_id); // return file name
         }
 
         unset($form['_token']);
@@ -46,7 +45,7 @@ class UserController extends Controller
         return redirect('/');
     }
 
-    private function saveProfileImage($image, $id) {
+    private function saveProfileImage($image, $image_id) {
         // get instance
         $img = \Image::make($image);
         // resize
@@ -54,7 +53,7 @@ class UserController extends Controller
             $constraint->upsize(); 
         });
         // save
-        $file_name = 'profile_'.$id.'.'.$image->getClientOriginalExtension();
+        $file_name = 'profile_'.$image_id.'.'.$image->getClientOriginalExtension();
         $save_path = 'public/storage/'.$file_name;
         Storage::put($save_path, (string) $img->encode());
         // return file name
