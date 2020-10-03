@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Post;
+use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -28,6 +30,12 @@ class PostController extends Controller
        $post->body = $request->body;
        //言語
        $post->language = $request->language;
+       //画像
+       if ($request->image != null){
+       $file_name=$request->file('image')->store('public/post_image');
+       $post->image = str_replace('public/','',$file_name);
+       };
+
        //登録ユーザーからidを取得
        $post->user_id = Auth::user()->id;
        // インスタンスの状態をデータベースに書き込む
@@ -57,8 +65,16 @@ class PostController extends Controller
     public function update(Request $request)
     {
         $post = Post::find($request->id);
+
+        //nullを許容するために条件分岐を使用
+        if($request->image != null){
+        $file_name=$request->file('image')->store('public/post_image');
+        $post->image = str_replace('public/','',$file_name);
+        };
+
         $form = $request->all();
         unset($form['_token']);
+        unset($form['_method']);
         $post->fill($form)->save();
         return redirect('/');
     }

@@ -15,11 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth'], function() {
 
-    Route::get('/post', 'App\Http\Controllers\PostController@showCreateForm')->name('posts.create');
-    Route::post('/post', 'App\Http\Controllers\PostController@create');
+    Route::get('/post/create', 'App\Http\Controllers\PostController@showCreateForm')->name('posts.create');
+    Route::post('/post/create', 'App\Http\Controllers\PostController@create');
 
     Route::get('/post/edit', 'App\Http\Controllers\PostController@edit')->name('posts.edit');
     Route::post('/post/edit', 'App\Http\Controllers\PostController@update')->name('posts.update');
+    Route::patch('/post/edit', 'App\Http\Controllers\PostController@update')->name('posts.update');
 
     Route::get('/post/delete', 'App\Http\Controllers\PostController@delete')->name('posts.delete');
     Route::post('/post/remove', 'App\Http\Controllers\PostController@remove')->name('posts.remove');
@@ -28,6 +29,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/user/edit', 'App\Http\Controllers\UserController@update')->name('user.update');
 
     Route::resource('user', 'App\Http\Controllers\UserController');
+    //Route::resource('post', 'App\Http\Controllers\PostController');
+
 
 
     Route::get('/', 'App\Http\Controllers\PostController@index')->name('/');
