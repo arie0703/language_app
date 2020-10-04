@@ -13,7 +13,7 @@
   @foreach ($posts as $post)
   <div class="post-wrapper">
     <h4>{{ $post->title }}</h4>
-    <p>{{ $post->body }}</p><br>
+    <p>{!! nl2br($post->body) !!}</p><br>
     @if (!empty( $post->image))
       <img src="/storage/{{ $post->image }}" id="img"><br>
     @endif
