@@ -9,7 +9,7 @@
     <div class="post-form">
         {{ csrf_field() }}
         @method('PATCH')
-        <input type='hidden' name='id' value='{{ $post->id }}'><br>
+        <h4>Edit post</h4>
 
         <div class="form-title">
             <input class="form-control" type="text" placeholder="Title" name="title" value="{{ $post->title }}">
@@ -41,8 +41,10 @@
         <br>
 
         <div class="form-submit">
-            <button type="submit">Post</button>
+            <button type="submit" class="btn btn-primary">Post</button>
         </div>
+
+        <input type='hidden' name='id' value='{{ $post->id }}'><br>
     </div>
 </form>
 @endsection

@@ -15,6 +15,10 @@
     color: red;
 }
 
+.post-form {
+    margin-top: 30px;
+}
+
 .post-form .form-control {
     margin: 20px 0;
     width: 400px;
@@ -25,4 +29,8 @@
     width: 100px;
     height: 100px;
     object-fit: cover;
+}
+
+input[type="hidden"]{
+    height: 0px;
 }
