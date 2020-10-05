@@ -57,5 +57,21 @@
     
 
 </form>
+
+<div class="discription">
+    <h3>What's Language Diary?</h3>
+    <p>外国語で日記をつけることによって、語学力の向上を目指すサービスです。</p>
+    <p>学習中の言語で毎日日記をつけ、学習の支えとしていきましょう！</p>
+    <br>
+    <p> You can write diary in foreign language you are learning!</p>
+    <p>Let's write everyday and help your studying with Language Diary!</p>
+    <br>
+    <p>Você pode escrever um diário no idioma que você está aprendendo.</p>
+    <p>Vamos escrever todos os dias e apoiar nosso aprendizado!</p>
+    
 </div>
+
+</div>
+
+
 @endsection
