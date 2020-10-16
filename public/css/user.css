@@ -5,3 +5,7 @@
     padding: 15px;
     width: 600px;
 }
+
+.edit-container .form-control {
+    width: 300px;
+}

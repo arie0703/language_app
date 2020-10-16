@@ -58,6 +58,7 @@
 
 </form>
 
+<!--
 <div class="discription">
     <h3>What's Language Diary?</h3>
     <p>外国語で日記をつけることによって、語学力の向上を目指すサービスです。</p>
@@ -70,6 +71,7 @@
     <p>Vamos escrever todos os dias e apoiar nosso aprendizado!</p>
     
 </div>
+-->
 
 </div>
 

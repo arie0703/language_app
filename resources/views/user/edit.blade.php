@@ -14,7 +14,7 @@
     <label for="profile_image">Edit Profile</label>
     <p>User Name</p>
 
-    <input type="text" class="userForm" name="name" placeholder="User" value="{{ $user->name }}">
+    <input type="text" class="userForm, form-control" name="name" placeholder="User" value="{{ $user->name }}">
     <br><br>
     <p>Image</p>
     <label for="image" class="btn">
