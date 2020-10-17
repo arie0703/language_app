@@ -33,7 +33,7 @@
 
         <p>Image</p>
         <label for="image" class="btn">
-            <input id="image" type="file"  name="image">
+            <input id="image" class="file" type="file"  name="image" accept="image/png,image/jpeg,image/gif,image/jpg">
         </label>
         <br>
 
@@ -48,7 +48,7 @@
     {
         var fileReader = new FileReader();
         fileReader.onload = (function() {
-        document.getElementById('img').src = fileReader.result;
+        document.getElementById('image').src = fileReader.result;
         });
         fileReader.readAsDataURL(obj.files[0]);
     }

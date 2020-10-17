@@ -18,7 +18,7 @@
     <br><br>
     <p>Image</p>
     <label for="image" class="btn">
-        <input id="image" type="file"  name="image">
+        <input id="image" type="file"  name="image" accept="image/png,image/jpeg,image/gif,image/jpg">
     </label>
     <br>
     <button type="submit" class="btn btn-primary">
