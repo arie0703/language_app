@@ -21,7 +21,6 @@
         <a href="/user/edit">Edit Profile</a><br><br>
         <a href="/post/create">New Post</a><br>
         <a href="/">My Posts</a><br>
-        <a href="/">Keep</a><br>
       </div>
       <br>
       <div class="timeline">
