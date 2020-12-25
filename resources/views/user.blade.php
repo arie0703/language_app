@@ -40,7 +40,7 @@
 
     <!-- 投稿表示 -->
     <div class="post-container">
-    @yield('posts')
+    @yield('right-side')
     </div>
 
   </div>

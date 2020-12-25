@@ -4,7 +4,7 @@
 <link href="/css/post.css" rel="stylesheet">
 @endsection
 
-@section('posts')
+@section('right-side')
 <form method="post" action="{{ route('posts.update') }}" enctype="multipart/form-data">
     <div class="post-form">
         {{ csrf_field() }}

@@ -5,7 +5,7 @@
 @endsection
 
 
-@section('posts')
+@section('right-side')
 <div class="edit-container">
   <form method="post" action="{{ route('user.update', ['user' => $user->id]) }}" enctype="multipart/form-data">
     @csrf
