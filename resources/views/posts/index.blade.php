@@ -4,7 +4,7 @@
 <link href="/css/post.css" rel="stylesheet">
 @endsection
 
-@section('posts')
+@section('right-side')
 
   @if(count($posts) == 0 )
   <p>You have not yet posted.</p>

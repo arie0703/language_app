@@ -64,4 +64,15 @@ body {
     display: block;
 }
 
+textarea {
+    resize: none;
+    max-width: 400px;
+}
 
+input[type="text"] {
+    max-width: 400px;
+}
+
+select {
+    max-width: 400px;
+}

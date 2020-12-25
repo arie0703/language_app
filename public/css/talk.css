@@ -1,0 +1,45 @@
+.page-wrapper {
+    margin-top: 30px;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.talk-form {
+    margin-top: 30px;
+}
+
+.talk-form div {
+    margin-bottom: 20px;
+}
+
+.talks {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.talks .talk-wrapper {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #c4c4c4;
+    padding: 20px;
+    height: 280px;
+    min-width: 280px;
+    margin: 10px 20px 10px 0px;
+    position: relative;
+    
+}
+
+.talk-info {
+    position: absolute;
+    bottom: 0;
+}
+
+#mini-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}

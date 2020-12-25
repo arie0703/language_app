@@ -30,10 +30,24 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::resource('user', 'App\Http\Controllers\UserController');
     //Route::resource('post', 'App\Http\Controllers\PostController');
+    
+
+    // talks
+    Route::get('/talk/create', 'App\Http\Controllers\TalkController@showCreateForm')->name('talks.create');
+    Route::post('/talk/create', 'App\Http\Controllers\TalkController@create');
+
+    Route::get('/talk/edit', 'App\Http\Controllers\TalkController@edit')->name('talks.edit');
+    Route::post('/talk/edit', 'App\Http\Controllers\TalkController@update')->name('talks.update');
+    Route::patch('/talk/edit', 'App\Http\Controllers\TalkController@update')->name('talks.update');
+
+    Route::get('/talk/delete', 'App\Http\Controllers\TalkController@delete')->name('talks.delete');
+    Route::post('/talk/remove', 'App\Http\Controllers\TalkController@remove')->name('talks.remove');
 
 
 
     Route::get('/', 'App\Http\Controllers\PostController@index')->name('/');
+
+    Route::get('talk', 'App\Http\Controllers\TalkController@index')->name('talk');
 
     //Language Timeline
     Route::get('/english', 'App\Http\Controllers\PostController@English');
