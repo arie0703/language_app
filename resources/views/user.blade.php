@@ -22,6 +22,13 @@
         <a href="/post/create">New Post</a><br>
         <a href="/">My Posts</a><br>
       </div>
+
+      <div class="menu">
+        <p>- Talk and Practice -</p>
+        <a href="/talk">Talk Channel</a><br>
+        <a href="/talk/search_user">Serach Friends</a><br>
+      </div>
+
       <br>
       <div class="timeline">
         <p>- Language Timeline -</p>

@@ -19,13 +19,18 @@
     flex-wrap: wrap;
 }
 
+.talks h4 {
+    margin-top: 3px;
+    padding-top: 7px;
+}
+
 .talks .talk-wrapper {
     background-color: white;
     border-radius: 10px;
     box-shadow: 1px 1px 1px #c4c4c4;
     padding: 20px;
     height: 280px;
-    min-width: 280px;
+    width: 280px;
     margin: 10px 20px 10px 0px;
     position: relative;
     
@@ -42,4 +47,43 @@
     border-radius: 50%;
     object-fit: cover;
     
+}
+
+
+.dropdown {
+float: right;
+padding: 7px;
+}
+
+.sub-menu {
+display: none;
+background: #efefef;
+border-radius: 5px;
+box-shadow: 1px 1px 1px 1px #c4c4c4;
+padding: 5px;
+position: absolute;
+z-index: 1;
+}
+
+.sub-menu > ul {
+list-style: none;
+margin: 0;
+padding: 0;
+width: 150px;
+}
+
+.sub-menu input[type="submit"] {
+border: none;
+background-color: #efefef;
+width: 100%;
+}
+
+.sub-menu input:hover {
+opacity: 0.5;
+}
+
+
+
+.dropdown:hover .sub-menu {
+display: block;
 }

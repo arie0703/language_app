@@ -24,6 +24,28 @@ class UserController extends Controller
    }
    */
 
+
+    public function getUsers() 
+    {
+        $user = User::orderBy('created_at', 'desc')->get();
+
+        $json = ["user" => $user];
+        return response()->json($json);
+    }
+
+    public function search()
+    {
+        return view('user/search');
+    }
+
+    public function getCurrentUser() 
+    {
+        $user = Auth::user();
+
+        $json = ["user" => $user];
+        return response()->json($json);
+    }
+
     public function edit(Request $request) {
         $user = Auth::user();
         return view('/user/edit', ['user' => $user]);

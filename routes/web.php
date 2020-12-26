@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::patch('/post/edit', 'App\Http\Controllers\PostController@update')->name('posts.update');
 
     Route::get('/post/delete', 'App\Http\Controllers\PostController@delete')->name('posts.delete');
-    Route::post('/post/remove', 'App\Http\Controllers\PostController@remove')->name('posts.remove');
+    Route::post('/post/remove/{id}', 'App\Http\Controllers\PostController@remove')->name('posts.remove');
 
     Route::get('/user/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
     Route::post('/user/edit', 'App\Http\Controllers\UserController@update')->name('user.update');
@@ -32,8 +32,13 @@ Route::group(['middleware' => 'auth'], function() {
     //Route::resource('post', 'App\Http\Controllers\PostController');
     
 
+    //json
+    Route::get('/ajax/users', 'App\Http\Controllers\UserController@getUsers');
+    Route::get('/ajax_user', 'App\Http\Controllers\UserController@getCurrentUser');
+    Route::get('/ajax', 'App\Http\Controllers\TalkController@getData');
+
     // talks
-    Route::get('/talk/create', 'App\Http\Controllers\TalkController@showCreateForm')->name('talks.create');
+    Route::get('/talk/create', 'App\Http\Controllers\TalkController@index')->name('talks.create');
     Route::post('/talk/create', 'App\Http\Controllers\TalkController@create');
 
     Route::get('/talk/edit', 'App\Http\Controllers\TalkController@edit')->name('talks.edit');
@@ -41,10 +46,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::patch('/talk/edit', 'App\Http\Controllers\TalkController@update')->name('talks.update');
 
     Route::get('/talk/delete', 'App\Http\Controllers\TalkController@delete')->name('talks.delete');
-    Route::post('/talk/remove', 'App\Http\Controllers\TalkController@remove')->name('talks.remove');
+    Route::post('/talk/remove/{id}', 'App\Http\Controllers\TalkController@remove')->name('talks.remove');
 
 
-
+    Route::get('/talk/search_user', 'App\Http\Controllers\UserController@search');
     Route::get('/', 'App\Http\Controllers\PostController@index')->name('/');
 
     Route::get('talk', 'App\Http\Controllers\TalkController@index')->name('talk');
