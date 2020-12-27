@@ -5,8 +5,9 @@
 @endsection
 
 @section('right-side')
-<form method="post" action="{{ route('posts.remove') }}">
+<form method="post" action="{{ route('posts.remove', $post->id) }}">
 {{ csrf_field() }}
+
     <div class="post-form">
     <h4>Are you sure you want to completely remove post below?</h4>
         <div class="post-wrapper">

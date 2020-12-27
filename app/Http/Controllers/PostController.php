@@ -87,8 +87,7 @@ class PostController extends Controller
 
     public function remove (Request $request)
     {
-        $post = Post::find($request->id);
-        $post->delete();
+        $post = Post::find($request->id)->delete();
         return redirect('/');
     }
 

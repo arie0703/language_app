@@ -1,0 +1,21 @@
+
+
+.users{
+    margin: 10px 20px 10px 0px;
+    background-color: white;
+    width: 300px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.users img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.users .info {
+    display: inline-block;
+    padding: 5px 20px;
+}

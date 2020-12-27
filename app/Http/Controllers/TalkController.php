@@ -15,7 +15,7 @@ class TalkController extends Controller
     // 投稿フォームの表示
     public function showCreateForm()
    {
-       return view('talks/create');
+       return view('talks');
    }
 
 
@@ -43,19 +43,30 @@ class TalkController extends Controller
        // インスタンスの状態をデータベースに書き込む
        $talk->save();
        //「投稿する」をクリックしたら投稿表示ページへリダイレクト        
-       return redirect()->route('talk', [
-           'id' => $talk->id,
-       ]);
+       return redirect()->route('talk');
    }
 
    //ユーザーの投稿を表示
    public function index(talk $talk)
    {
-       $talks = talk::where('user_id', Auth::user()->id)
-       ->orderBy('created_at', 'desc')->get();
-       return view('talks/index', [
-           'talks' => $talks,
-       ]);        
+        $user = Auth::user()->id;
+        $talks = talk::orderBy('created_at', 'desc')->get();
+
+        $json = ["talks" => $talks];
+        //return response()->json($json);
+
+        return view('talks/index', [
+            'talks' => $talks,
+            'user' => $user,
+        ]);        
+   }
+
+   public function getData() 
+   {
+        $talks = talk::orderBy('created_at', 'desc')->get();
+
+        $json = ["talks" => $talks];
+        return response()->json($json);
    }
 
     public function edit(Request $request)
@@ -77,15 +88,15 @@ class TalkController extends Controller
 
     public function delete(Request $request)
     {
-        $talk = talk::find($request->id);
-        return view('talks/delete', ['talk' => $talk]); 
+        Talk::find($request->id)->delete();
+        return redirect('talk');
     }
 
     public function remove (Request $request)
     {
         $talk = talk::find($request->id);
         $talk->delete();
-        return redirect('/');
+        return redirect('talk');
     }
 
 }
