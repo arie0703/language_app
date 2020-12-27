@@ -36,6 +36,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/ajax/users', 'App\Http\Controllers\UserController@getUsers');
     Route::get('/ajax_user', 'App\Http\Controllers\UserController@getCurrentUser');
     Route::get('/ajax', 'App\Http\Controllers\TalkController@getData');
+    Route::get('/search/{user}','App\Http\Controllers\UserController@getUsers');
+    Route::get('/search','App\Http\Controllers\UserController@getUsers2'); //旧版
 
     // talks
     Route::get('/talk/create', 'App\Http\Controllers\TalkController@index')->name('talks.create');
@@ -47,7 +49,6 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/talk/delete', 'App\Http\Controllers\TalkController@delete')->name('talks.delete');
     Route::post('/talk/remove/{id}', 'App\Http\Controllers\TalkController@remove')->name('talks.remove');
-
 
     Route::get('/talk/search_user', 'App\Http\Controllers\UserController@search');
     Route::get('/', 'App\Http\Controllers\PostController@index')->name('/');

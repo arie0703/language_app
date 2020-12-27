@@ -25,12 +25,23 @@ class UserController extends Controller
    */
 
 
-    public function getUsers() 
+    public function getUsers($userName) 
     {
+        
+        $users = User::where('name', 'like', '%' . $userName . '%')->orderBy('created_at', 'desc')->get();
+        $json = ["user" => $users];
+        return response()->json($json);
+
+    }
+
+    public function getUsers2() 
+    {
+        
         $user = User::orderBy('created_at', 'desc')->get();
 
         $json = ["user" => $user];
         return response()->json($json);
+
     }
 
     public function search()
