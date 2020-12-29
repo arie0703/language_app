@@ -26,21 +26,20 @@ $('.search-area .btn-search').on('click', function get_users() {
             for (var i = 0; i < value.length; i++) {
 
                 let name = value[i].name;
+                let id = value[i].id;
 
                 if (!value[i].image) {
                     var img = 'noicon.jpg';
                 } else {
                     var img = 'storage/' + value[i].image;
                 }
-                
-                console.log(img);
-
+                       
                 html = `
                 <div class="users">
+                    <a href="/user/show?id=${id}"></a>
                     <img src="/storage/${img}" id="img">
                     <div class="info">
-                        <p>${name}</p> 
-                        <a href="#"><i class="far fa-envelope"></i></a>
+                        <p>${name}</p>
                     </div> 
                 </div>
                         `

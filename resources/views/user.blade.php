@@ -19,6 +19,7 @@
 
       <div class="menu">
         <a href="/user/edit">Edit Profile</a><br><br>
+        <a href="/user/show?id={{ Auth::user()->id}}">My Page</a><br>
         <a href="/post/create">New Post</a><br>
         <a href="/">My Posts</a><br>
       </div>
