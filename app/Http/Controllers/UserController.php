@@ -8,6 +8,9 @@ use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Entry;
+use App\Models\Room;
+use App\Models\Message;
 
 class UserController extends Controller
 {
@@ -55,6 +58,44 @@ class UserController extends Controller
 
         $json = ["user" => $user];
         return response()->json($json);
+    }
+
+    public function show(Request $request) 
+    {
+        $user = User::find($request->id);
+        
+        //userに紐づくpost
+        $posts = Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+
+        //entry
+        $currentUserEntry = Entry::where('user_id', Auth::user()->id)->get();
+        $userEntry = Entry::where('user_id', $user->id)->get();
+
+        //初期値
+        $isRoom = false;
+        $roomId = null;
+
+        if (Auth::user()->id != $user->id) {
+            foreach ($currentUserEntry as $cu ) {
+                foreach($userEntry as $u ) {
+                    if ( $cu->room_id == $u->room_id ) {
+                        $isRoom = true;
+                        $roomId = $cu->room_id;
+                    }
+                }
+            }
+        }
+
+        return view('/user/show', 
+        [
+            'user' => $user, 
+            'posts' => $posts,
+            'isRoom' => $isRoom,
+            'roomId' => $roomId,
+            'currentUserEntry' => $currentUserEntry,
+            'userEntry' => $userEntry,
+            
+        ]);
     }
 
     public function edit(Request $request) {

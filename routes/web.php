@@ -25,11 +25,18 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/post/delete', 'App\Http\Controllers\PostController@delete')->name('posts.delete');
     Route::post('/post/remove/{id}', 'App\Http\Controllers\PostController@remove')->name('posts.remove');
 
+    Route::get('/user/show', 'App\Http\Controllers\UserController@show')->name('user.page');
     Route::get('/user/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
     Route::post('/user/edit', 'App\Http\Controllers\UserController@update')->name('user.update');
 
     Route::resource('user', 'App\Http\Controllers\UserController');
+    
+    Route::get('/rooms/show/{id}', 'App\Http\Controllers\RoomController@show')->name('room.show');
+    Route::post('/rooms/create', 'App\Http\Controllers\RoomController@create')->name('room.create');;
+    //Route::resource('room', 'App\Http\Controllers\RoomController');
     //Route::resource('post', 'App\Http\Controllers\PostController');
+
+    Route::post('/message/create', 'App\Http\Controllers\MessageController@create')->name('message.create');
     
 
     //json
