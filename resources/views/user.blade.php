@@ -25,8 +25,9 @@
       </div>
 
       <div class="menu">
-        <p>- Talk and Practice -</p>
+        <p>- Talk Language -</p>
         <a href="/talk">Talk Channel</a><br>
+        <a href="/rooms/index">Chat Room</a><br>
         <a href="/talk/search_user">Serach Friends</a><br>
       </div>
 
