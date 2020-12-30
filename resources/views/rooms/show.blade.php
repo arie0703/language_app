@@ -1,11 +1,11 @@
-@extends('user')
+@extends('rooms/index')
 
 @section('styles')
 <link href="/css/room.css" rel="stylesheet">
 @endsection
 
 
-@section('right-side')
+@section('chat-room')
 <!-- 第三者がDMを見れないようにする -->
 @if($current_user == null)
     <p>{{$error_msg}}</p>

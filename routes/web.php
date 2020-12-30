@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::resource('user', 'App\Http\Controllers\UserController');
     
+    Route::get('/rooms/index', 'App\Http\Controllers\RoomController@show');
     Route::get('/rooms/show/{id}', 'App\Http\Controllers\RoomController@show')->name('room.show');
     Route::post('/rooms/create', 'App\Http\Controllers\RoomController@create')->name('room.create');;
     //Route::resource('room', 'App\Http\Controllers\RoomController');
