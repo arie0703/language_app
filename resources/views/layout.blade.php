@@ -7,8 +7,7 @@
   <title>Language Diary</title>
   @yield('styles')
   <link href="/css/styles.css" rel="stylesheet">
-  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="/css/fontawesome/css/all.css" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -41,6 +40,8 @@
     });
   </script>
 @endif
+
+<script src="/js/jquery/jquery-3.5.1.js"></script>
 @yield('scripts')
 </body>
 </html>

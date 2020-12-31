@@ -27,4 +27,13 @@ class MessageController extends Controller
 
         return redirect()->route('room.show', ['id' => $room_id]);
     }
+
+    public function getMessages($roomId) 
+    {
+        
+        $messages = Message::where('room_id', 'like', '%' . $roomId . '%')->orderBy('created_at', 'asc')->get();
+        $json = ["messages" => $messages];
+        return response()->json($json);
+
+    }
 }
