@@ -44,6 +44,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/ajax/users', 'App\Http\Controllers\UserController@getUsers');
     Route::get('/ajax_user', 'App\Http\Controllers\UserController@getCurrentUser');
     Route::get('/ajax', 'App\Http\Controllers\TalkController@getData');
+    Route::get('/messages/{roomid}', 'App\Http\Controllers\MessageController@getMessages');
     Route::get('/search/{user}','App\Http\Controllers\UserController@getUsers');
     Route::get('/search','App\Http\Controllers\UserController@getUsers2'); //旧版
 

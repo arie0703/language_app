@@ -5,7 +5,7 @@
 @endsection
 
 @section('scripts')
-<script src="/js/user.js"></script>
+<script src="/js/ajax/user.js"></script>
 @endsection
 
 
