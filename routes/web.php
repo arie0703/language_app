@@ -63,6 +63,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/', 'App\Http\Controllers\PostController@index')->name('/');
 
     Route::get('talk', 'App\Http\Controllers\TalkController@index')->name('talk');
+    Route::get('/talk/show/{id}', 'App\Http\Controllers\TalkController@show');
 
     //Language Timeline
     Route::get('/english', 'App\Http\Controllers\PostController@English');
