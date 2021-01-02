@@ -1,6 +1,8 @@
 <div class="talks">
     @foreach ($talks as $talk)
         <div class="talk-wrapper">
+            <a href="/talk/show/{{$talk->id}}"></a>
+
             <div class="top-side">
 
                 @if ($user == $talk->user_id)

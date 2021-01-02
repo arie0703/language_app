@@ -14,12 +14,12 @@
         <p class="title">Talk Channel</p>
         <p>You can recruit friends who talk with you!</p>
 
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modal-example">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modal-post">
             New
         </button>
 
 
-        @include('components.modal')
+        @include('components.modal-post')
 
         <div class="talks">
         @include('components.talk')

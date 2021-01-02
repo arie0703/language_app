@@ -61,6 +61,17 @@ class TalkController extends Controller
         ]);        
    }
 
+   public function show(Request $request)
+   {
+       $talk = Talk::find($request->id);
+       $user = User::where('id', $talk->user_id)->first();
+
+       return view('talks/show', [
+           'talk' => $talk,
+           'user' => $user,
+       ]);
+   }
+
    public function getData() 
    {
         $talks = talk::orderBy('created_at', 'desc')->get();

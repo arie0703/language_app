@@ -1,7 +1,7 @@
 
  
   <!-- 2.モーダルの配置 -->
-  <div class="modal" id="modal-example" tabindex="-1">
+  <div class="modal" id="modal-post" tabindex="-1">
     <div class="modal-dialog">
  
       <!-- 3.モーダルのコンテンツ -->
