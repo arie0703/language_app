@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Language Diary</title>
+  <title>Langrow! (β)</title>
   @yield('styles')
   <link href="/css/styles.css" rel="stylesheet">
   <link href="/css/fontawesome/css/all.css" rel="stylesheet">
@@ -12,7 +12,7 @@
 <body>
 <header>
   <div class="header-logo">
-    <a href="/">Language Diary</a>
+    <a href="/">Langrow!</a>
   </div>
   <div class="header-menu">
     @if(Auth::check())
