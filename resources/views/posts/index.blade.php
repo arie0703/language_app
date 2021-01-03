@@ -12,8 +12,17 @@
 
   @foreach ($posts as $post)
   <div class="post-wrapper">
-    <h4>{{ $post->title }}</h4>
-    <p>{!! nl2br($post->body) !!}</p><br>
+    <h4>
+      {{ $post->title }} 
+
+      <!-- Stateが1ならprivate -->
+      @if($post->state == 1)
+        <i class="fas fa-lock"></i>
+      @endif
+    
+    </h4>
+    
+    <p>{!! nl2br($post->body) !!}</p><br> 
     @if (!empty( $post->image))
       <img src="/storage/{{ $post->image }}" id="img"><br>
     @endif

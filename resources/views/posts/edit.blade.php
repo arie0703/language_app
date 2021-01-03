@@ -21,7 +21,7 @@
 
         <div class="form-language">
         <select name="language" class="form-control">
-          <option selected="selected" value="{{ $post->language }}">Language</option>
+          <option value="{{ $post->language }}">Language</option>
           <option value="English">English</option>
           <option value="German">German</option>
           <option value="French">French</option>
@@ -34,11 +34,19 @@
         </select>
         </div>
 
+
         <p>Image</p>
         <label for="image" class="btn">
             <input id="image" type="file"  name="image">
         </label>
         <br>
+
+        <div class="form-state">
+            <p>
+                <input type="radio" name="state" value="0" checked="checked"> Public
+                <input type="radio" name="state" value="1"> Private
+            </p>
+        </div>
 
         <div class="form-submit">
             <button type="submit" class="btn btn-primary">Post</button>

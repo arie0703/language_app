@@ -36,6 +36,8 @@ class PostController extends Controller
        $post->image = str_replace('public/','',$file_name);
        };
 
+       $post->state = $request->state;
+
        //登録ユーザーからidを取得
        $post->user_id = Auth::user()->id;
        // インスタンスの状態をデータベースに書き込む
@@ -72,6 +74,9 @@ class PostController extends Controller
         $post->image = str_replace('public/','',$file_name);
         };
 
+        $post->language = $request->language;
+        $post->state = $request->state;
+
         $form = $request->all();
         unset($form['_token']);
         unset($form['_method']);
@@ -95,7 +100,7 @@ class PostController extends Controller
    //Language Timeline
    public function English(Post $post)
    {
-        $posts = Post::where('language', 'English')
+        $posts = Post::where('language', 'English')->where('state',0)
         ->orderBy('created_at', 'desc')->get();
         return view('posts/language/english', [
             'posts' => $posts,
@@ -104,7 +109,7 @@ class PostController extends Controller
 
    public function French(Post $post)
    {
-        $posts = Post::where('language', 'French')
+        $posts = Post::where('language', 'French')->where('state',0)
         ->orderBy('created_at', 'desc')->get();
         return view('posts/language/french', [
             'posts' => $posts,
@@ -113,7 +118,7 @@ class PostController extends Controller
 
    public function German(Post $post)
    {
-        $posts = Post::where('language', 'German')
+        $posts = Post::where('language', 'German')->where('state',0)
         ->orderBy('created_at', 'desc')->get();
         return view('posts/language/german', [
             'posts' => $posts,
@@ -122,7 +127,7 @@ class PostController extends Controller
 
    public function Spanish(Post $post)
    {
-        $posts = Post::where('language', 'Spanish')
+        $posts = Post::where('language', 'Spanish')->where('state',0)
         ->orderBy('created_at', 'desc')->get();
         return view('posts/language/spanish', [
             'posts' => $posts,
@@ -131,7 +136,7 @@ class PostController extends Controller
 
    public function Portuguese(Post $post)
    {
-        $posts = Post::where('language', 'Portuguese')
+        $posts = Post::where('language', 'Portuguese')->where('state',0)
         ->orderBy('created_at', 'desc')->get();
         return view('posts/language/portuguese', [
             'posts' => $posts,
@@ -140,7 +145,7 @@ class PostController extends Controller
 
    public function Russian(Post $post)
    {
-        $posts = Post::where('language', 'Russian')
+        $posts = Post::where('language', 'Russian')->where('state',0)
         ->orderBy('created_at', 'desc')->get();
         return view('posts/language/russian', [
             'posts' => $posts,
@@ -149,7 +154,7 @@ class PostController extends Controller
 
    public function Japanese(Post $post)
    {
-        $posts = Post::where('language', 'Japanese')
+        $posts = Post::where('language', 'Japanese')->where('state',0)
         ->orderBy('created_at', 'desc')->get();
         return view('posts/language/japanese', [
             'posts' => $posts,
@@ -158,7 +163,7 @@ class PostController extends Controller
 
    public function Chinese(Post $post)
    {
-        $posts = Post::where('language', 'Chinese')
+        $posts = Post::where('language', 'Chinese')->where('state',0)
         ->orderBy('created_at', 'desc')->get();
         return view('posts/language/chinese', [
             'posts' => $posts,
@@ -167,7 +172,7 @@ class PostController extends Controller
 
    public function Korean(Post $post)
    {
-        $posts = Post::where('language', 'Korean')
+        $posts = Post::where('language', 'Korean')->where('state',0)
         ->orderBy('created_at', 'desc')->get();
         return view('posts/language/korean', [
             'posts' => $posts,
