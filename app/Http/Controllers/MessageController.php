@@ -17,7 +17,7 @@ class MessageController extends Controller
         $room = Room::find($request->id);
         $room_id = $request->room_id;
 
-        if(!empty(Entry::where(['user_id', Auth::user()->id], ['room_id', $room_id ]))) {
+        if(!empty(Entry::where('user_id', Auth::user()->id)->where('room_id', $room_id ))) {
             $message = new Message();
             $message->content = $request->content;
             $message->user_id = Auth::user()->id;

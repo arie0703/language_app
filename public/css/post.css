@@ -6,6 +6,10 @@
     background-color: #fff;
 }
 
+.fa-lock {
+    font-size: 12px;
+}
+
 .post-info {
     display: inline;
     margin-right: 10px;

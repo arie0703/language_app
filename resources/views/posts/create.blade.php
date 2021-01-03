@@ -37,6 +37,14 @@
         </label>
         <br>
 
+
+        <div class="form-state">
+            <p>
+                <input type="radio" name="state" value="0" checked="checked"> Public
+                <input type="radio" name="state" value="1"> Private
+            </p>
+        </div>
+
         <div class="form-submit">
             <button type="submit" class="btn btn-primary">Post</button>
         </div>
