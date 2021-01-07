@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Post;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Storage;
+use JD\Cloudder\Facades\Cloudder;
 
 class PostController extends Controller
 {
@@ -31,10 +32,24 @@ class PostController extends Controller
        //言語
        $post->language = $request->language;
        //画像
-       if ($request->image != null){
-       $file_name=$request->file('image')->store('public/post_image');
-       $post->image = str_replace('public/','',$file_name);
-       };
+
+       if ($request->image != null) {
+            if ($image = $request->file('image')) {
+                $image_name = $image->getRealPath();
+                // Cloudinaryへアップロード
+                Cloudder::upload($image_name, null);
+                list($width, $height) = getimagesize($image_name);
+                $publicId = Cloudder::getPublicId();
+                $imageUrl = Cloudder::show($publicId, [
+                'width'     => $width,
+                'height'    => $height
+                ]);
+
+                $post->image = $imageUrl;
+            }
+       }
+
+       
 
        $post->state = $request->state;
 
@@ -70,8 +85,19 @@ class PostController extends Controller
 
         //nullを許容するために条件分岐を使用
         if($request->image != null){
-        $file_name=$request->file('image')->store('public/post_image');
-        $post->image = str_replace('public/','',$file_name);
+            if ($image = $request->file('image')) {
+                $image_name = $image->getRealPath();
+                // Cloudinaryへアップロード
+                Cloudder::upload($image_name, null);
+                list($width, $height) = getimagesize($image_name);
+                $publicId = Cloudder::getPublicId();
+                $imageUrl = Cloudder::show($publicId, [
+                'width'     => $width,
+                'height'    => $height
+                ]);
+
+                $post->image = $imageUrl;
+            }
         };
 
         $post->language = $request->language;

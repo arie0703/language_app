@@ -11,9 +11,9 @@
 
       <div class="user-img">
       @if (!empty(Auth::user()->image))
-      <img src="/storage/storage/{{ Auth::user()->image}}" id="img">
+      <img src="{{ Auth::user()->image}}" id="img">
       @else
-      <img src="/storage/noicon.jpg" id="img">
+      <img src="/noicon.jpg" id="img">
       @endif
       </div>
 

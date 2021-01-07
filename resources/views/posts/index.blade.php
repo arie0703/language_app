@@ -24,7 +24,7 @@
     
     <p>{!! nl2br($post->body) !!}</p><br> 
     @if (!empty( $post->image))
-      <img src="/storage/{{ $post->image }}" id="img"><br>
+      <img src="{{ $post->image }}" id="img"><br>
     @endif
     <p class="post-info">{{ $post->created_at }}</p>
     <p class="post-info">Written in <span>{{ $post->language }}</span></p>

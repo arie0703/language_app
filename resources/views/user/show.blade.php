@@ -10,9 +10,9 @@
     <div class="profile">
         <div class="profile-top">
             @if (!empty($user->image))
-                <img src="/storage/storage/{{ $user->image}}" id="img">
+                <img src="{{ $user->image}}" id="img">
             @else
-                <img src="/storage/noicon.jpg" id="img">
+                <img src="/noicon.jpg" id="img">
             @endif
             <p class="name">{{ $user->name }}</p>
         </div>

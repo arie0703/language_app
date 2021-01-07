@@ -19,9 +19,9 @@
         <div class="entry-list">
             <a href="/rooms/show/{{$user_entries[$i]->room_id}}"></a>
             @if (!empty($user_info[$i]->image))
-                <img src="/storage/storage/{{ $user_info[$i]->image}}" id="img">
+                <img src="{{ $user_info[$i]->image}}" id="img">
             @else
-                <img src="/storage/noicon.jpg" id="img">
+                <img src="/noicon.jpg" id="img">
             @endif
             <p>{{$user_info[$i]->name}}</p>
             

@@ -29,15 +29,15 @@ $('.search-area .btn-search').on('click', function get_users() {
                 let id = value[i].id;
 
                 if (!value[i].image) {
-                    var img = 'noicon.jpg';
+                    var img = '/noicon.jpg';
                 } else {
-                    var img = 'storage/' + value[i].image;
+                    var img = value[i].image;
                 }
                        
                 html = `
                 <div class="users">
                     <a href="/user/show?id=${id}"></a>
-                    <img src="/storage/${img}" id="img">
+                    <img src="${img}" id="img">
                     <div class="info">
                         <p>${name}</p>
                     </div> 
