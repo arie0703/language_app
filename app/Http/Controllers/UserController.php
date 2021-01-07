@@ -11,6 +11,7 @@ use App\Models\Post;
 use App\Models\Entry;
 use App\Models\Room;
 use App\Models\Message;
+use JD\Cloudder\Facades\Cloudder;
 
 class UserController extends Controller
 {
@@ -103,34 +104,26 @@ class UserController extends Controller
         return view('/user/edit', ['user' => $user]);
     }
 
-    public function update($image_id, Request $request) {
+    public function update(Request $request) {
         $user = Auth::user();
-        $form = $request->all();
 
-        $profileImage = $request->file('image');
 
-        if ($profileImage != null) {
-            $form['image'] = $this->saveProfileImage($profileImage, $image_id); // return file name
+        if ($image = $request->file('image')) {
+            $image_name = $image->getRealPath();
+            // Cloudinaryへアップロード
+            Cloudder::upload($image_name, null);
+            list($width, $height) = getimagesize($image_name);
+            $publicId = Cloudder::getPublicId();
+            $imageUrl = Cloudder::show($publicId, [
+                'width'     => $width,
+                'height'    => $height
+            ]);
+            $user->image = $imageUrl;
         }
 
-        unset($form['_token']);
-        unset($form['_method']);
-        $user->fill($form)->save();
+        $user->name = $request->name;
+        
+        $user->save();
         return redirect('/');
-    }
-
-    private function saveProfileImage($image, $image_id) {
-        // get instance
-        $img = \Image::make($image);
-        // resize
-        $img->fit(100, 100, function($constraint){
-            $constraint->upsize(); 
-        });
-        // save
-        $file_name = 'profile_'.$image_id.'.'.$image->getClientOriginalExtension();
-        $save_path = 'public/storage/'.$file_name;
-        Storage::put($save_path, (string) $img->encode());
-        // return file name
-        return $file_name;
     }
 }

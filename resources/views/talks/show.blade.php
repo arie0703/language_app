@@ -17,9 +17,9 @@
 
             <div class="user-profile">
                 @if (!empty($user->image))
-                    <img src="/storage/storage/{{ $user->image}}" id="img">
+                    <img src="{{ $user->image}}" id="img">
                 @else
-                    <img src="/storage/noicon.jpg" id="img">
+                    <img src="/noicon.jpg" id="img">
                 @endif
 
                 <p><a href="/user/show?id={{$talk->user_id}}">{{$user->name}}</a></p>

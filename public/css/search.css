@@ -25,6 +25,7 @@
 .users img {
     height: 100px;
     width: 100px;
+    object-fit: cover;
     border-radius: 50%;
     background-color: white;
 }
