@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
+
 Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/post/create', 'App\Http\Controllers\PostController@showCreateForm')->name('posts.create');
@@ -60,7 +64,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/talk/remove/{id}', 'App\Http\Controllers\TalkController@remove')->name('talks.remove');
 
     Route::get('/talk/search_user', 'App\Http\Controllers\UserController@search');
-    Route::get('/', 'App\Http\Controllers\PostController@index')->name('/');
+    Route::get('/mypost', 'App\Http\Controllers\PostController@index')->name('/mypost');
 
     Route::get('talk', 'App\Http\Controllers\TalkController@index')->name('talk');
     Route::get('/talk/show/{id}', 'App\Http\Controllers\TalkController@show');
@@ -75,9 +79,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/japanese', 'App\Http\Controllers\PostController@Japanese');
     Route::get('/chinese', 'App\Http\Controllers\PostController@Chinese');
     Route::get('/korean', 'App\Http\Controllers\PostController@Korean');
-
 });
 
+Route::get('/', 'App\Http\Controllers\HomeController@index');
+Route::get('/login/guest', 'App\Http\Controllers\Auth\LoginController@guestLogin');
 Auth::routes();
 
 

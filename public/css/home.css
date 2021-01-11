@@ -1,0 +1,72 @@
+
+/* top */
+
+.top img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.top {
+    position: relative;
+}
+
+/* 画像の中の文字を要素いっぱいに広げる*/
+.top-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: auto;
+    min-width: 200px;
+    max-width: 900px;
+    height: 250px;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 5px;
+}
+
+.top-title p {
+    font-size: 50px;
+    color: darkslategray;
+    text-align: center;
+    line-height: 150px;
+}
+
+.login-wrapper {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-wrapper a {
+    display: inline-block;
+    margin: 0 auto;
+    color: white;
+    padding: 10px;
+    font-size: 24px;
+    width: 200px;
+}
+
+.login-wrapper a:hover {
+    text-decoration: none;
+    color: white;
+    transition: 0.4s;
+}
+
+.login {
+    background-color: #00b7ce;
+}
+
+.guest {
+    background-color: lightseagreen;
+}
+
+.login:hover {
+    background-color: #0092a5;
+}
+
+.guest:hover {
+    background-color: teal;
+}

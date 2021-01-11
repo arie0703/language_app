@@ -29,7 +29,7 @@ $('.search-area .btn-search').on('click', function get_users() {
                 let id = value[i].id;
 
                 if (!value[i].image) {
-                    var img = '/noicon.jpg';
+                    var img = '/image/noicon.jpg';
                 } else {
                     var img = value[i].image;
                 }
