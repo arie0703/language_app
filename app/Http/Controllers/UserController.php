@@ -124,6 +124,6 @@ class UserController extends Controller
         $user->name = $request->name;
         
         $user->save();
-        return redirect('/');
+        return redirect('/mypost');
     }
 }

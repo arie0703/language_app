@@ -107,7 +107,7 @@ class PostController extends Controller
         unset($form['_token']);
         unset($form['_method']);
         $post->fill($form)->save();
-        return redirect('/');
+        return redirect('/mypost');
     }
 
     public function delete(Request $request)
@@ -119,7 +119,7 @@ class PostController extends Controller
     public function remove (Request $request)
     {
         $post = Post::find($request->id)->delete();
-        return redirect('/');
+        return redirect('/mypost');
     }
 
 

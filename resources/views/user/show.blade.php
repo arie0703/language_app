@@ -12,7 +12,7 @@
             @if (!empty($user->image))
                 <img src="{{ $user->image}}" id="img">
             @else
-                <img src="/noicon.jpg" id="img">
+                <img src="/image/noicon.jpg" id="img">
             @endif
             <p class="name">{{ $user->name }}</p>
         </div>

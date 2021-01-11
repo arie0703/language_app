@@ -21,7 +21,7 @@
             @if (!empty($user_info[$i]->image))
                 <img src="{{ $user_info[$i]->image}}" id="img">
             @else
-                <img src="/noicon.jpg" id="img">
+                <img src="/image/noicon.jpg" id="img">
             @endif
             <p>{{$user_info[$i]->name}}</p>
             

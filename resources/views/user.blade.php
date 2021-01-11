@@ -13,15 +13,17 @@
       @if (!empty(Auth::user()->image))
       <img src="{{ Auth::user()->image}}" id="img">
       @else
-      <img src="/noicon.jpg" id="img">
+      <img src="/image/noicon.jpg" id="img">
       @endif
       </div>
 
       <div class="menu">
+        @if (Auth::user()->email != "guest@guest.com")
         <a href="/user/edit">Edit Profile</a><br><br>
+        @endif
         <a href="/user/show?id={{ Auth::user()->id}}">My Page</a><br>
         <a href="/post/create">New Post</a><br>
-        <a href="/">My Posts</a><br>
+        <a href="/mypost">My Posts</a><br>
       </div>
 
       <div class="menu">

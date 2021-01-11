@@ -94,7 +94,7 @@ class TalkController extends Controller
         unset($form['_token']);
         unset($form['_method']);
         $talk->fill($form)->save();
-        return redirect('/');
+        return redirect('talk');
     }
 
     public function delete(Request $request)
