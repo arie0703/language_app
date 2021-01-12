@@ -41,6 +41,7 @@
   </script>
 @endif
 
+
 <script src="/js/jquery/jquery-3.5.1.js"></script>
 @yield('scripts')
 </body>

@@ -101,7 +101,14 @@ class UserController extends Controller
 
     public function edit(Request $request) {
         $user = Auth::user();
-        return view('/user/edit', ['user' => $user]);
+
+        //guestは編集できない。
+        if ($user->email == "guest@guest.com") {
+            return redirect('/mypost');
+        } else {
+            return view('/user/edit', ['user' => $user]);
+        }
+        
     }
 
     public function update(Request $request) {
