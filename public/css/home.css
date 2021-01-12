@@ -70,3 +70,98 @@
 .guest:hover {
     background-color: teal;
 }
+
+/* middle */
+
+.middle {
+    text-align: center;
+}
+
+.introduction {
+    display: flex;
+    margin: 30px auto;
+    width: 55%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+
+.introduction img {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.introduction .discription {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+}
+
+.discription .title {
+    font-size: 23px;
+}
+.discription .text {
+    margin-top: 50px;
+}
+
+.discription .text p {
+    font-size: 16px;
+}
+
+/*　bottom */
+
+.bottom {
+    height: 400px;
+    position: relative;
+    background-color: #dedede;
+}
+
+.bottom .text-container {
+    /* 要素を上下左右中央に */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    
+}
+
+.bottom .text-container h1 {
+    margin-bottom: 30px;
+}
+
+/* foot */
+
+.foot {
+    height: 40px;
+    line-height: 40px;
+    background-color: #0f2f38;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.foot p {
+    font-size: 16px;
+}
+
+.foot a {
+    color: white;
+    margin-left: 10px;
+}
+
+.foot a:hover {
+    color: greenyellow;
+    text-decoration: none;
+}
+
+
+
+
