@@ -29,6 +29,12 @@ Cloudinary（画像アップロード）
 <p>投稿機能(Diary, Talk)</p>
 <p>ユーザーとのプライベートチャット機能</p>
 <p>DBのデータをajaxでビューに反映させる処理(jQuery使用）</p>
+
+## 未実装の部分
+<ol>
+    <li>バリデーション</li>
+    <li>レスポンシブデザイン</li>
+</ol>
   
 ## heroku URL  
 https://langrow.herokuapp.com/
