@@ -45,7 +45,7 @@ class LoginController extends Controller
         $password = 'hogehoge';
 
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            return redirect()->route('/mypost');
+            return redirect()->route('/');
         }
 
         return redirect('/');
