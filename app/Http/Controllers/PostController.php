@@ -76,7 +76,12 @@ class PostController extends Controller
     public function edit(Request $request)
     {
         $post = Post::find($request->id);
-        return view('posts/edit', ['post' => $post]); 
+        //投稿者じゃないユーザーが編集ページにアクセスしないように設定！
+        if ($post->user_id != Auth::user()->id ) {
+            return redirect('/mypost');
+        } else {
+            return view('posts/edit', ['post' => $post]); 
+        }
     }
 
     public function update(Request $request)
@@ -113,7 +118,14 @@ class PostController extends Controller
     public function delete(Request $request)
     {
         $post = Post::find($request->id);
-        return view('posts/delete', ['post' => $post]); 
+
+        //投稿者じゃないユーザーが削除ページにアクセスしないように設定！
+        if ($post->user_id != Auth::user()->id ) {
+            return redirect('/mypost');
+        } else {
+            return view('posts/delete', ['post' => $post]); 
+        }
+        
     }
 
     public function remove (Request $request)
