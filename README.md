@@ -3,8 +3,8 @@
 Mac OS Catalina 10.15.6  
 Visual Studio Code （エディタ）  
 
-jQuery 3.5.1 (ajax)
-Vue.js 2.6.12 (axios, jQueryから移行作業中)
+jQuery 3.5.1 (ajax)  
+Vue.js 2.6.12 (axios, jQueryから移行作業中)  
 PHP 7.3.11  
 Laravel 8.x.x  
 MySQL  
