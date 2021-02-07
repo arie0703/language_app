@@ -43,6 +43,7 @@
 
 
 <script src="/js/jquery/jquery-3.5.1.js"></script>
+<script src="/js/vue/vue.js"></script>
 @yield('scripts')
 </body>
 </html>

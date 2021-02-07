@@ -5,7 +5,8 @@
 @endsection
 
 @section('scripts')
-<script src="/js/ajax/message.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/axios/message.js"></script>
 @endsection
 
 
@@ -18,23 +19,26 @@
     <input type="hidden" class="form-control" id="room-id" placeholder="Type User Name" name="room-id" value="{{$id}}">
         <div class="message-wrapper">
             <div id="scroll">
-                <div id="messages"></div>
-                <!--
-                @foreach($messages as $m ) 
-                    
-                    @if( $m->user_id == Auth::user()->id )
-                        <div class="right-message">
-                            <p>{{$m->content}}</p>
+
+                <!-- Vueファイルを読み込む -->
+                <div id="app">
+                    <section v-if="hasError" v-cloak>
+                        <p>Error!</p>
+                    </section>
+
+                    <section v-else>
+                        <div class="message" v-for="(message) in messages" v-cloak>
+                            <div v-if="message.user_id == current_user"class="right-message">
+                                <p>@{{ message.content }}</p>
+                            </div>
+
+                            <div v-if="message.user_id != current_user"class="left-message">
+                                <p>@{{ message.content }}</p>
+                            </div>
                         </div>
-                    @else
-                        <div class="left-message">
-                            <p>{{$m->content}}</p>
-                        </div>
-                    @endif
-                    
-                    
-                @endforeach
-                -->
+                    </section>
+                </div>
+                
             </div> 
         </div>
         
